@@ -1,0 +1,35 @@
+1:"$Sreact.fragment"
+2:"/_next/static/chunks/0y5vsutm_2v45.js"
+3:"/_next/static/chunks/3vsdn0f662hnh.js"
+4:I[16358,["$2","$3"],"Providers"]
+5:I[10291,["$2","$3"],"default"]
+6:I[2968,["$2","$3"],"default"]
+7:"/_next/static/chunks/0o6ljkpik9cw_.js"
+8:I[7575,["$2","$3","$7"],""]
+a:"/_next/static/chunks/06lg-vbfryf59.js"
+b:"/_next/static/chunks/3sib-gj77vt1p.js"
+c:I[37385,["$2","$3","$a","$b"],"AppShell"]
+10:I[37745,["$2","$3"],"ClientPageRoot"]
+11:"/_next/static/chunks/2rk93mxu2dv-s.js"
+12:I[91395,["$2","$3","$a","$b","$11"],"default"]
+15:I[82520,["$2","$3"],"OutletBoundary"]
+16:"$Sreact.suspense"
+18:"ViewportBoundary"
+19:I[82520,["$2","$3"],"$18"]
+1b:"MetadataBoundary"
+1c:I[82520,["$2","$3"],"$1b"]
+1e:I[24462,["$2","$3"],"default",1]
+:HL["/_next/static/chunks/3ijusdvum02eh.css","style"]
+:HC["/",""]
+e:X
+f:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":[["$","$L10",null,{"Component":"$12","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@13","$@14"]}}],[["$","script","script-0",{"src":"/_next/static/chunks/2rk93mxu2dv-s.js","async":true,"nonce":"$undefined"}]],["$","$L15",null,{"children":["$","$16",null,{"name":"Next.MetadataOutlet","children":"$@17"}]}]]}],"p":false,"v":null}}]]
+d:[["children",{"s":"cards","h":512,"d":{"r":["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":"$e"},"c":"$Qf"}]]
+9:[["children",{"s":"app","h":512,"d":{"r":["$","$1","c",{"children":[[["$","script","script-0",{"src":"/_next/static/chunks/06lg-vbfryf59.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/3sib-gj77vt1p.js","async":true,"nonce":"$undefined"}]],["$","$Lc",null,{"children":["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}]]}],"p":false,"v":null},"c":"$Qd"}]]
+0:{"P":null,"c":["","app","cards",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/3ijusdvum02eh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0y5vsutm_2v45.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/3vsdn0f662hnh.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","data-theme":"dark","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){try{var c=localStorage.getItem(\"np-theme\")||\"dark\";var t=c===\"system\"?(matchMedia(\"(prefers-color-scheme: light)\").matches?\"light\":\"dark\"):c;document.documentElement.setAttribute(\"data-theme\",t);document.documentElement.setAttribute(\"data-theme-choice\",c)}catch(e){}})()"}}]}],["$","body",null,{"className":"min-h-dvh","children":["$","$L4",null,{"children":["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","main",null,{"className":"mx-auto grid min-h-dvh max-w-xl place-content-center px-6 text-center","children":[["$","h1",null,{"className":"text-5xl","children":"This page doesn’t exist."}],["$","p",null,{"className":"mt-4 text-muted","children":"Check the address, or head back to NovaPay."}],["$","$L8",null,{"href":"/","className":"btn-gold mx-auto mt-8 rounded-full px-6 py-3","children":"Go to NovaPay"}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}]]}],"p":false,"v":null},"c":"$Q9"},"h":{"r":["$","$1","h",{"children":[null,["$","$L19",null,{"children":"$L1a"}],["$","$L1c",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$16",null,{"name":"Next.Metadata","children":"$L1d"}]}],null]}],null]}],"p":false,"v":null}},"m":"$undefined","G":["$1e",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/3ijusdvum02eh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"y-eSWUu9YAVrSpeWk526d"}
+e:C
+13:{}
+14:"$f:0:1:d:r:props:children:0:props:serverProvidedParams:params"
+1a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#050505","media":"(prefers-color-scheme: dark)"}],["$","meta","3",{"name":"theme-color","content":"#f2f2f4","media":"(prefers-color-scheme: light)"}]]
+1f:I[60329,["$2","$3"],"IconMark"]
+17:null
+1d:[["$","title","0",{"children":"NovaPay — Global payments made simple"}],["$","meta","1",{"name":"description","content":"A wallet you fund with Mobile Money, virtual cards for eligible online payments, and every fee shown before you confirm. Built in Cameroon."}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L1f","3",{}]]

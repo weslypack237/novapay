@@ -1,0 +1,37 @@
+1:"$Sreact.fragment"
+2:"/_next/static/chunks/0y5vsutm_2v45.js"
+3:"/_next/static/chunks/3vsdn0f662hnh.js"
+4:I[16358,["$2","$3"],"Providers"]
+5:I[10291,["$2","$3"],"default"]
+6:I[2968,["$2","$3"],"default"]
+7:"/_next/static/chunks/0o6ljkpik9cw_.js"
+8:I[7575,["$2","$3","$7"],""]
+c:"/_next/static/chunks/06lg-vbfryf59.js"
+d:"/_next/static/chunks/3sib-gj77vt1p.js"
+e:I[37385,["$2","$3","$c","$d"],"AppShell"]
+14:I[93455,["$2","$3","$c","$d"],"default"]
+15:I[82520,["$2","$3"],"OutletBoundary"]
+16:"$Sreact.suspense"
+19:"ViewportBoundary"
+1a:I[82520,["$2","$3"],"$19"]
+1b:"MetadataBoundary"
+1c:I[82520,["$2","$3"],"$1b"]
+1d:I[60329,["$2","$3"],"IconMark"]
+:HL["/_next/static/chunks/3ijusdvum02eh.css","style"]
+a:X
+12:X
+12:C
+13:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-xl pt-10 text-center","children":[["$","span",null,{"className":"tile-icon mx-auto grid size-16 place-items-center rounded-full","children":["$","$L14",null,{"icon":{"name":"bell","size":24,"node":[["path",{"d":"M10.268 21a2 2 0 0 0 3.464 0","key":"vwvbt9"}],["path",{"d":"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326","key":"11g9vi"}]]},"size":26,"aria-hidden":true}]}],["$","h2",null,{"className":"mt-5 text-2xl","children":"You’re all caught up"}],["$","p",null,{"className":"mx-auto mt-2 max-w-sm text-muted","children":"Top-ups, card payments and security alerts will appear here."}]]}],null,["$","$L15",null,{"children":["$","$16",null,{"name":"Next.MetadataOutlet","children":"$@17"}]}]]}],"p":"$@18","v":null,"s":"$a"}}]]
+10:[["children",{"s":"notifications","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@11","v":"$12","s":"$a"},"c":"$Q13"}]]
+b:[["children",{"s":"app","h":96,"d":{"r":["$","$1","c",{"children":[[["$","script","script-0",{"src":"/_next/static/chunks/06lg-vbfryf59.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/3sib-gj77vt1p.js","async":true}]],["$","$Le",null,{"children":["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]}]]}],"p":"$@f","v":null,"s":"$a"},"c":"$Q10"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/3ijusdvum02eh.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/0y5vsutm_2v45.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/3vsdn0f662hnh.js","async":true}]],["$","html",null,{"lang":"en","data-theme":"dark","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){try{var c=localStorage.getItem(\"np-theme\")||\"dark\";var t=c===\"system\"?(matchMedia(\"(prefers-color-scheme: light)\").matches?\"light\":\"dark\"):c;document.documentElement.setAttribute(\"data-theme\",t);document.documentElement.setAttribute(\"data-theme-choice\",c)}catch(e){}})()"}}]}],["$","body",null,{"className":"min-h-dvh","children":["$","$L4",null,{"children":["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}],"notFound":[["$","main",null,{"className":"mx-auto grid min-h-dvh max-w-xl place-content-center px-6 text-center","children":[["$","h1",null,{"className":"text-5xl","children":"This page doesn’t exist."}],["$","p",null,{"className":"mt-4 text-muted","children":"Check the address, or head back to NovaPay."}],["$","$L8",null,{"href":"/","className":"btn-gold mx-auto mt-8 rounded-full px-6 py-3","children":"Go to NovaPay"}]]}],[]]}]}]}]]}]]}],"p":"$@9","v":null,"s":"$a"},"c":"$Qb"},"h":{"r":["$","$1","h",{"children":[null,["$","$L1a",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#050505","media":"(prefers-color-scheme: dark)"}],["$","meta","3",{"name":"theme-color","content":"#f2f2f4","media":"(prefers-color-scheme: light)"}]]}],["$","$L1c",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$16",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"NovaPay — Global payments made simple"}],["$","meta","1",{"name":"description","content":"A wallet you fund with Mobile Money, virtual cards for eligible online payments, and every fee shown before you confirm. Built in Cameroon."}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L1d","3",{}]]}]}],null]}],null]}],"p":"$@1e","v":null,"s":"$a"}},"a":"$@1f","u":"$@20","b":"y-eSWUu9YAVrSpeWk526d"}
+17:null
+a:300
+20:true
+a:C
+1f:0
+11:"$undefined"
+f:"$undefined"
+9:"$undefined"
+1e:"$undefined"
+18:"$undefined"

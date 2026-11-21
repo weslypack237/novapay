@@ -1,0 +1,5 @@
+{
+  // "Go Live" serves the static website preview (built by scripts/build-preview.mjs)
+  "liveServer.settings.root": "/preview",
+  "liveServer.settings.port": 5500
+}

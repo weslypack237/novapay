@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+/*
+ * NovaPay tokens, taken from the approved mockup.
+ * Dark: black with gold light at the edges, smoked-glass panels.
+ * Light: pearl white with soft shadows and warm gold glass.
+ * Components use semantic names only, so every screen switches theme the same way.
+ */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #050505;
+  --page-glow: rgba(212, 164, 55, 0.2);
+  --surface: #0e0e0f;
+  --surface-elevated: #18181a;
+  --surface-sunken: #0a0a0b;
+  --text-primary: #f7f7f5;
+  --text-secondary: #a9a9ad;
+  --text-faint: #75757b;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --brand-accent: #d9ad45;
+  --brand-accent-hi: #f2cf73;
+  --brand-accent-text: #eec565;
+  --on-accent: #1a1203;
+  --success: #34d27b;
+  --warning: #f0aa3c;
+  --danger: #f06a6a;
+
+  --glass: linear-gradient(160deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025));
+  --glass-solid: #141416;
+  --glass-border: rgba(255, 255, 255, 0.11);
+  --glass-highlight: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+  --glass-edge: rgba(242, 207, 115, 0.28); /* gold rim light on hero panels */
+
+  --tile: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  --tile-border: rgba(255, 255, 255, 0.1);
+  --tile-icon-bg: rgba(255, 255, 255, 0.06);
+  --tile-icon: #f1f1f1;
+
+  --gold-tile: linear-gradient(180deg, rgba(232, 186, 84, 0.55), rgba(140, 98, 24, 0.55));
+  --gold-tile-border: rgba(246, 210, 120, 0.55);
+  --gold-tile-text: #fff6dc;
+
+  --nav-active: linear-gradient(180deg, rgba(236, 190, 88, 0.5), rgba(120, 84, 20, 0.5));
+  --nav-active-text: #fff3d1;
+
+  --card-face: radial-gradient(120% 140% at 85% -10%, rgba(255, 214, 120, 0.55), transparent 42%),
+    linear-gradient(135deg, #1d1d1f 0%, #0b0b0c 58%, #19181a 100%);
+  --card-text: #f7f7f5;
+  --card-accent: #e8bb52;
+  --card-border: rgba(255, 255, 255, 0.16);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --page: #f2f2f4;
+  --page-glow: rgba(233, 196, 106, 0.28);
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-sunken: #ebebee;
+  --text-primary: #141414;
+  --text-secondary: #5d5d63;
+  --text-faint: #8a8a90;
+  --border: rgba(20, 20, 30, 0.08);
+  --border-strong: rgba(20, 20, 30, 0.16);
+  --brand-accent: #c99a2e;
+  --brand-accent-hi: #b98a20;
+  --brand-accent-text: #9a6f0e; /* 4.9:1 on white for small text */
+  --on-accent: #2a1d02;
+  --success: #138a4b;
+  --warning: #a8670f;
+  --danger: #c23434;
+
+  --glass: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.66));
+  --glass-solid: #ffffff;
+  --glass-border: rgba(255, 255, 255, 0.9);
+  --glass-highlight: rgba(255, 255, 255, 1);
+  --glass-shadow: 0 14px 40px rgba(40, 32, 12, 0.1), 0 2px 6px rgba(40, 32, 12, 0.05);
+  --glass-edge: rgba(201, 154, 46, 0.25);
+
+  --tile: linear-gradient(180deg, #ffffff, #f7f7f9);
+  --tile-border: rgba(20, 20, 30, 0.06);
+  --tile-icon-bg: linear-gradient(180deg, #fff6dd, #f8e6b5);
+  --tile-icon: #b9871a;
+
+  --gold-tile: linear-gradient(180deg, #fbe7ad, #ecc76a);
+  --gold-tile-border: rgba(226, 182, 80, 0.7);
+  --gold-tile-text: #4a3306;
+
+  --nav-active: linear-gradient(180deg, #fbe9b8, #f1d17f);
+  --nav-active-text: #4a3306;
+
+  --card-face: radial-gradient(130% 150% at 80% -20%, rgba(255, 250, 225, 0.95), transparent 45%),
+    linear-gradient(135deg, #f3d98f 0%, #dfb757 45%, #c99a36 100%);
+  --card-text: #2b1e05;
+  --card-accent: #6b4a08;
+  --card-border: rgba(255, 255, 255, 0.6);
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-elevated: var(--surface-elevated);
+  --color-sunken: var(--surface-sunken);
+  --color-fg: var(--text-primary);
+  --color-muted: var(--text-secondary);
+  --color-faint: var(--text-faint);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-gold: var(--brand-accent);
+  --color-gold-hi: var(--brand-accent-hi);
+  --color-gold-text: var(--brand-accent-text);
+  --color-on-gold: var(--on-accent);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --font-sans: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Times New Roman", Times, serif;
+  --font-brand: "Montserrat", "Inter Variable", sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background: var(--page);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--page);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  /* Headings use the serif, as in the mockup ("Welcome back", "My Card"). */
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  ::selection { background: var(--brand-accent); color: var(--on-accent); }
+  :focus-visible { outline: 2px solid var(--brand-accent); outline-offset: 3px; }
+}
+
+/* Edge glow behind every screen */
+.page-glow {
+  background:
+    radial-gradient(60% 40% at 100% 0%, var(--page-glow), transparent 70%),
+    radial-gradient(50% 35% at 0% 100%, var(--page-glow), transparent 70%),
+    var(--page);
+  background-attachment: fixed;
+}
+
+.wordmark { font-family: var(--font-brand); font-weight: 700; letter-spacing: -0.01em; }
+.display { font-family: var(--font-display); }
+.figure { font-variant-numeric: tabular-nums lining-nums; }
+
+/* Liquid Glass panel (balance, nav, sheets). Solid fallback when blur is unsupported. */
+.glass {
+  background: var(--glass-solid);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
+}
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .glass {
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    backdrop-filter: blur(20px) saturate(150%);
+  }
+}
+.glass-rim { box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight), 0 0 0 1px var(--glass-edge); }
+
+/* Quick-action and list tiles */
+.tile { background: var(--tile); border: 1px solid var(--tile-border); }
+.tile-icon { background: var(--tile-icon-bg); color: var(--tile-icon); }
+.gold-tile { background: var(--gold-tile); border: 1px solid var(--gold-tile-border); color: var(--gold-tile-text); box-shadow: 0 8px 24px -10px rgba(217, 173, 69, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.35); }
+.nav-active { background: var(--nav-active); color: var(--nav-active-text); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 6px 18px -8px rgba(217, 173, 69, 0.8); }
+
+/* Primary button */
+.btn-gold {
+  background: linear-gradient(180deg, #f6d781, #d9a944);
+  color: #241802;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 8px 22px -10px rgba(217, 169, 68, 0.9);
+}
+.btn-gold:hover { filter: brightness(1.05); }
+.btn-gold:active { transform: translateY(1px); }
+
+/* Payment card face */
+.card-face {
+  background: var(--card-face);
+  border: 1px solid var(--card-border);
+  color: var(--card-text);
+  box-shadow: 0 24px 50px -22px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.card-face[data-frozen="true"] { filter: grayscale(0.9) brightness(0.8); }
+.card-sheen {
+  background:
+    linear-gradient(118deg, transparent 38%, rgba(255, 228, 160, 0.42) 50%, transparent 58%),
+    linear-gradient(118deg, transparent 52%, rgba(255, 240, 200, 0.18) 60%, transparent 70%);
+  mix-blend-mode: screen;
+}
+
+/* Wallet panel watermark (large N on the right) */
+.watermark { opacity: 0.42; filter: drop-shadow(0 0 28px rgba(233, 190, 90, 0.5)); }
+:root[data-theme="light"] .watermark { opacity: 0.38; }
+
+@keyframes shimmer { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-elevated) 25%, var(--surface-sunken) 50%, var(--surface-elevated) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+  border-radius: 8px;
+}
+
+@keyframes sheet-in { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+.sheet-in { animation: sheet-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.fade-in { animation: fade-in 180ms ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

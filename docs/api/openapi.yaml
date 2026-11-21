@@ -1,0 +1,116 @@
+openapi: 3.1.0
+info:
+  title: NovaPay API
+  version: 0.1.0
+  description: Milestone 1. Money amounts are integer minor units with an explicit currency.
+servers: [{ url: http://localhost:8000/api/v1 }]
+components:
+  securitySchemes:
+    bearer: { type: http, scheme: bearer }
+  schemas:
+    Error:
+      type: object
+      properties:
+        error: { type: object, properties: { code: { type: string }, message: { type: string } } }
+        request_id: { type: string }
+    User:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        email: { type: [string, "null"] }
+        phone: { type: [string, "null"] }
+        status: { enum: [pending_verification, active, restricted, suspended, closed] }
+        first_name: { type: string }
+        last_name: { type: string }
+        email_verified: { type: boolean }
+        roles: { type: array, items: { type: string } }
+        is_staff: { type: boolean }
+        theme: { enum: [system, light, dark] }
+    WalletAccount:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        currency: { type: string, example: XAF }
+        exponent: { type: integer, example: 0 }
+        available_minor: { type: integer }
+        held_minor: { type: integer }
+        pending_minor: { type: integer }
+        ledger_minor: { type: integer }
+security: [{ bearer: [] }]
+paths:
+  /health:
+    get: { security: [], summary: Liveness, responses: { "200": { description: ok } } }
+  /auth/register:
+    post:
+      security: []
+      summary: Register a customer (creates pending account, wallet, sends OTP)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [first_name, last_name, password, password_confirmation, accept_terms]
+              properties:
+                first_name: { type: string }
+                last_name: { type: string }
+                email: { type: string, format: email }
+                phone: { type: string, description: E.164 }
+                password: { type: string, minLength: 10 }
+                password_confirmation: { type: string }
+                accept_terms: { type: boolean }
+      responses:
+        "201": { description: Created — data.token, data.user, next_step=verify_otp }
+        "422": { description: Validation error }
+  /auth/login:
+    post:
+      security: []
+      summary: Sign in with email or phone
+      requestBody:
+        content:
+          application/json:
+            schema: { type: object, required: [identifier, password], properties: { identifier: { type: string }, password: { type: string }, device_name: { type: string } } }
+      responses:
+        "200": { description: data.token, data.user }
+        "403": { description: Account suspended or closed }
+        "422": { description: invalid_credentials }
+        "429": { description: too_many_attempts }
+  /auth/verify-otp:
+    post:
+      summary: Verify email/phone code; activates a pending account
+      requestBody: { content: { application/json: { schema: { type: object, properties: { code: { type: string, pattern: "^\\d{6}$" }, purpose: { enum: [verify_email, verify_phone] } } } } } }
+      responses: { "200": { description: Updated user }, "422": { description: invalid_code } }
+  /auth/resend-otp: { post: { summary: Issue a new code (3 per 5 min), responses: { "200": { description: sent } } } }
+  /auth/logout: { post: { summary: Revoke current token, responses: { "200": { description: ok } } } }
+  /auth/logout-others: { post: { summary: Revoke all other tokens, responses: { "200": { description: data.revoked } } } }
+  /me: { get: { summary: Current user, responses: { "200": { description: "data: User" } } } }
+  /me/theme:
+    patch:
+      requestBody: { content: { application/json: { schema: { type: object, properties: { theme: { enum: [system, light, dark] } } } } } }
+      responses: { "200": { description: saved } }
+  /wallets: { get: { summary: Wallets with ledger-derived balances, responses: { "200": { description: "data: Wallet[], demo_mode" } } } }
+  /wallets/{walletId}/transactions:
+    get:
+      parameters:
+        - { name: walletId, in: path, required: true, schema: { type: string, format: uuid } }
+        - { name: currency, in: query, schema: { type: string } }
+        - { name: type, in: query, schema: { type: string } }
+        - { name: per_page, in: query, schema: { type: integer, maximum: 100 } }
+      responses: { "200": { description: Paginated ledger lines }, "404": { description: Not your wallet } }
+  /admin/overview: { get: { summary: "Permission admin.overview.view", responses: { "200": { description: counts + trial balance } } } }
+  /admin/users: { get: { summary: "Permission admin.users.view", responses: { "200": { description: Paginated users } } } }
+  /admin/users/{userId}/status:
+    patch:
+      summary: "Permission admin.users.change_status — reason required, audited"
+      parameters: [{ name: userId, in: path, required: true, schema: { type: string, format: uuid } }]
+      requestBody: { content: { application/json: { schema: { type: object, required: [status, reason], properties: { status: { enum: [active, restricted, suspended, closed] }, reason: { type: string, minLength: 5 } } } } } }
+      responses: { "200": { description: ok }, "403": { description: forbidden } }
+  /admin/audit-logs: { get: { summary: "Permission admin.audit.view", responses: { "200": { description: Paginated audit log } } } }
+  /admin/ledger/trial-balance: { get: { summary: "Permission admin.ledger.view", responses: { "200": { description: per-currency debits/credits } } } }
+  /admin/ledger/transactions/{transactionId}/reverse:
+    post:
+      summary: "Permission admin.ledger.reverse — compensating posting, audited"
+      parameters:
+        - { name: transactionId, in: path, required: true, schema: { type: string, format: uuid } }
+        - { name: Idempotency-Key, in: header, required: true, schema: { type: string } }
+      requestBody: { content: { application/json: { schema: { type: object, required: [reason_code, reason], properties: { reason_code: { type: string }, reason: { type: string, minLength: 10 } } } } } }
+      responses: { "201": { description: Reversal posted }, "200": { description: Replayed }, "409": { description: already_reversed } }
